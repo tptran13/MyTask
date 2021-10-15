@@ -10,6 +10,7 @@
         android:id="@+id/rvMyTask"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@drawable/gradient"
         app:layout_constraintBottom_toTopOf="@+id/etTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,15 +29,22 @@
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:insetLeft="0dp"
         android:text="Add Todo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnDelete" />
+        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+        android:layout_marginRight="5dp"
+        android:backgroundTint="#808080"/>
 
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete Todo"
+        android:layout_marginRight="2dp"
+        android:backgroundTint="#808080"
+        android:insetRight="0dp"
+        android:text="Delete "
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
