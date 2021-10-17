@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:circularflow_defaultRadius="@dimen/material_emphasis_medium"
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMyTask"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/gradient"
         app:layout_constraintBottom_toTopOf="@+id/etTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,12 +18,12 @@
 
     <EditText
         android:id="@+id/etTitle"
-        android:singleLine="true"
-        android:scrollHorizontally="true"
-        android:focusable="true"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:focusable="true"
         android:hint="Enter Todo Title"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnAdd"
         app:layout_constraintStart_toStartOf="parent" />
@@ -33,32 +33,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
-        android:backgroundTint="#2196F3"
+        android:backgroundTint="#3A499C"
         android:insetLeft="0dp"
         android:insetTop="6dp"
         android:insetBottom="3dp"
+        app:cornerRadius="@android:dimen/thumbnail_width"
         app:icon="@android:drawable/ic_input_add"
         app:iconGravity="textStart"
         app:iconPadding="0dp"
         app:iconSize="30dp"
         app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnDelete" />
+        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+        app:rippleColor="#3F51B5"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
-        android:backgroundTint="#2196F3"
         android:insetRight="0dp"
         android:insetBottom="3dp"
         android:textColor="@color/white"
+        app:cornerRadius="@android:dimen/thumbnail_width"
         app:icon="@android:drawable/ic_delete"
         app:iconGravity="textStart"
         app:iconPadding="0dp"
         app:iconSize="30dp"
         app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
