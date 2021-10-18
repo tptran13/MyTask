@@ -3,6 +3,7 @@ package com.example.mytask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_todo.*
 
@@ -29,11 +30,22 @@ class MainActivity : AppCompatActivity() {
                 todoAdapter.addTodo((todo))
                 etTitle.text.clear()
             }
+            val snack = Snackbar.make(it,"Item Added", Snackbar.LENGTH_SHORT)
+            snack.setAnchorView(R.id.btnAdd)
+            snack.setBackgroundTint(resources.getColor(R.color.dark_blue))
+            snack.setTextColor(resources.getColor((R.color.white)))
+            snack.show()
         }
 
         btnDelete.setOnClickListener()
         {
             todoAdapter.deleteTodos()
+
+            val snack = Snackbar.make(it,"Item Deleted", Snackbar.LENGTH_SHORT)
+            snack.setAnchorView(R.id.btnDelete)
+            snack.setBackgroundTint(resources.getColor(R.color.dark_blue))
+            snack.setTextColor(resources.getColor((R.color.white)))
+            snack.show()
         }
     }
 }
